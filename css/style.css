@@ -1,79 +1,86 @@
 @charset "UTF-8";
-
-
 html {
     box-sizing: border-box;
 }
-
 *,
 *::before,
 *::after {
     box-sizing: inherit;
 }
-
 body {
-    background-color: #f9f9f9;
+    background-color: #E4EFAF;
     font-family: Arial, sans-serif;
     font-size: 16px;
     line-height: 1.429;
     color: black;
+    height: 100vh;
 }
-
-
 img {
     max-width: 100%;
     height: auto;
 }
-
 a {
     text-decoration: none;
     color: inherit;
 }
-
 ul {
     list-style: none;
     padding: 0;
     margin: 0;
 }
-
 h1, h2, h3, p {
     padding: 0;
     margin: 0;
 }
-
-
-body {
-    background: #edf0f1;
-    padding: 80px 0 0 0;
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
-
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+}
 .todo-container {
     width: 100%;
-    float: left;
-    padding: 15px;
+    margin: 0 auto;
+    padding-top: 15px;
 }
-
+.inner {
+    width: 100%;
+    background-color: #fff;
+}
+.todo-inner {
+    background-color: #E4EFAF;
+}
+.header-img {
+    width: 100%;
+}
+.header-img img {
+    width: 100%;
+    height: auto;
+}
 .header {
     width: 100%;
     height: 80px;
-
-    position: fixed;
     padding: 15px;
-    top: 0;
-    left: 0;
     z-index: 5;
-
-    background-color: steelblue;
+    position: relative;
+    background-color: #E4EFAF;
     box-shadow: 0 2px 4px rgba(44, 62, 80, 0.15);
-    border-bottom-right-radius: 10px;
-    border-bottom-left-radius: 10px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
 }
-
 .header-input {
     width: 100%;
     height: 50px;
     float: left;
-    color: #fff;
+    color: #000;
     font-size: 15px;
     font-weight: 400;
     text-indent: 18px;
@@ -83,19 +90,16 @@ body {
     border: 0;
     box-shadow: none;
     outline: none;
-
     -webkit-appearance: none;
     -moz-appearance: none;
+    
 }
-
 .header-input::-webkit-input-placeholder {
-    color: rgba(255, 255, 255, 0.75);
+    color: rgba(0, 0, 0, 0.4);
 }
-
 .header-input:-ms-input-placeholder {
-    color: rgba(255, 255, 255, 0.75);
+    color: rgba(0, 0, 0, 0.4);
 }
-
 .header-button {
     width: 50px;
     height: 50px;
@@ -104,23 +108,18 @@ body {
     top: 15px;
     right: 15px;
     z-index: 2;
-
     border-radius: 25px;
     border: 0;
     box-shadow: none;
     outline: none;
     cursor: pointer;
-
     -webkit-appearance: none;
     -moz-appearance: none;
 }
-
-
 .todo {
     width: 100%;
     float: left;
 }
-
 .todo-item {
     width: 100%;
     min-height: 50px;
@@ -129,7 +128,6 @@ body {
     font-weight: 500;
     color: #444;
     line-height: 22px;
-
     background: #fff;
     border-radius: 5px;
     position: relative;
@@ -138,20 +136,16 @@ body {
     padding: 14px 100px 14px 14px;
     word-break: break-word;
 }
-
 .todo-item:last-of-type {
     margin: 0;
 }
-
 .todo-buttons {
     width: 100px;
     height: 50px;
-
     position: absolute;
     top: 0;
     right: 0;
 }
-
 .todo-buttons button {
     width: 50px;
     height: 50px;
@@ -164,52 +158,41 @@ body {
     box-shadow: none;
     outline: none;
     cursor: pointer;
-
     -webkit-appearance: none;
     -moz-appearance: none;
 }
-
 .todo-buttons .buttons button:last-of-type:before {
     content: '';
     width: 1px;
     height: 30px;
     background: #edf0f1;
-
     position: absolute;
     top: 10px;
     left: 0;
 }
-
 .todo-remove {
      background-image: url("../img/trash.png");
- }
-
+}
 .todo-complete {
     background-image: url("../img/uncheck.png");
 }
-
 .todo-completed .todo-complete {
     background-image: url("../img/check.png");
 }
-
 .todo-completed {
     position: relative;
-    padding: 60px 0 0 0;
+    padding: 60px 0;
 }
-
 .todo-completed:before {
     content: '';
     width: 150px;
     height: 1px;
     background: #d8e5e0;
-
     position: absolute;
     top: 30px;
     left: 50%;
-
     margin: 0 0 0 -75px;
 }
-
 .todo:empty:after {
     content: 'Нет задач';
     margin: 15px 0 0 0;
@@ -218,7 +201,6 @@ body {
 .todo-completed:empty:after {
     content: 'Нет выполненых задач';
 }
-
 .todo:after,
 .todo-completed:after {
     width: 100%;
@@ -226,4 +208,24 @@ body {
     text-align: center;
     font-size: 12px;
     color: #aaa;
+}
+.empty-message {
+    position: absolute;
+    top: 60%;
+    left: 0%;
+    width: 300px;
+    height: 50px;
+    border-radius: 15px;
+    background-color: #FFDEEF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.empty-text {
+    font-size: 16px;
+    font-weight: normal;
+    color: #000;
+}
+.hide {
+    opacity: 0;
 }

@@ -7,31 +7,40 @@
 		content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>ToDo</title>
-	<script defer src="/js/script.js"></script>
-	<link rel="stylesheet" type="text/css" href="css/normalize.css">
-	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<script defer src="./js/script.js"></script>
+	<link rel="stylesheet" type="text/css" href="./css/normalize.css">
+	<link rel="stylesheet" type="text/css" href="./css/style.css">
 </head>
 
 <body>
-
-	<header class="header">
-		<form class="todo-control">
-			<label><input class="header-input" type="text" placeholder="Какие планы?"></label>
-			<button class="header-button" id="add" type="submit"></button>
-		</form>
-	</header>
-
-	<div class="todo-container">
-
-		<ul class="todo todo-list" id="todo">
-
-		</ul>
-		<ul class="todo todo-completed" id="completed">
-
-		</ul>
+	<div class="wrapper">
+		<div class="inner">
+			<div class="container">
+				<div class="empty-message hide">
+					<p class="empty-text">Введите название задачи:)</p>
+				</div>
+				<div class="header-img">
+					<img src="./img/images.png" alt="img-todolist">
+				</div>
+				<header class="header">
+					<form class="todo-control">
+						<label><input class="header-input" type="text" placeholder="Какие планы?"></label>
+						<button class="header-button" id="add" type="submit"></button>
+					</form>
+				</header>
+			</div>
+		</div>
+		<div class="inner todo-inner">
+			<div class="container">
+				<div class="todo-container">
+					<ul class="todo todo-list" id="todo">
+					</ul>
+					<ul class="todo todo-completed" id="completed">
+					</ul>
+				</div>
+			</div>
+		</div>
 	</div>
-
-
 </body>
 
 </html>
