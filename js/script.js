@@ -4,7 +4,6 @@ const todoList = document.querySelector('.todo-list');
 const todoCompleted = document.querySelector('.todo-completed');
 const empty = document.querySelector('.empty-message')
 let toDoData = [];
-console.log();
 
 function animate ({timing, draw, duration}) {
     let start = performance.now();
@@ -50,6 +49,8 @@ function reload () {
     if (localStorage.key('toDoData')) {
         toDoData = JSON.parse(localStorage.getItem('toDoData'));
         render();
+    } else {
+        reload ();
     }
 }
 function showMessage () {
@@ -103,4 +104,4 @@ todoControl.addEventListener('submit', function(event) {
         render();
 });
 
-reload();
+//reload();

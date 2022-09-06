@@ -220,6 +220,7 @@ h1, h2, h3, p {
     display: flex;
     justify-content: center;
     align-items: center;
+    border: 1px solid rgba(184, 184, 184, 0.368);
 }
 .empty-text {
     font-size: 16px;
@@ -228,4 +229,35 @@ h1, h2, h3, p {
 }
 .hide {
     opacity: 0;
+}
+@media(max-width: 1000px) {
+    .empty-message {
+        top: 50%;
+    }
+}
+@media(max-width: 767px) {
+    .empty-message {
+        top: 45%;
+        height: 40px;
+    }
+}
+@media(max-width: 561px) {
+    .empty-message {
+        top: 42%;
+        height: 25px;
+        width: 250px;
+    }
+    .empty-text {
+        font-size: 12px;
+    }
+}
+@media(max-width: 400px) {
+    .empty-message {
+        top: 37%;
+        height: 20px;
+        width: 200px;
+    }
+    .empty-text {
+        font-size: 10px;
+    }
 }
